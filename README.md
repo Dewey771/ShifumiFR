@@ -1,0 +1,2 @@
+# ShifumiFR
+Shifumi en français
