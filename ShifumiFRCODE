@@ -1,0 +1,62 @@
+import random
+
+victoires = 0
+defaites = 0
+egalites = 0
+
+continuer = True
+
+while continuer :
+
+  liste1 = ['Pierre', 'Feuille', 'Ciseau']
+  J1 = input("Que choisissez vous ? Pierre, Feuille ou ciseau ?\n>")
+  if (J1 == "Pierre") or (J1 == "Feuille") or (J1 == "Ciseau"):
+
+    J2 = random.choice(liste1)
+    print(J2)
+
+    if J2 == "Pierre":
+      if J1 == "Pierre":
+        print("Il y a égalité")
+        egalites += 1
+      elif J1 == "Ciseau":
+        print("Vous avez perdu :(")
+        defaites += 1
+      else :
+        print("vous avez gagné")
+        victoires += 1
+      
+    elif J2 == "Ciseau":
+      if J1 == "Pierre":
+        print("Vous avez gagné")
+        victoires += 1
+      elif J1 == "Ciseau":
+        print("Il y a égalité")
+        egalites += 1
+      else :
+        print("vous avez perdu")
+        defaites += 1
+    
+    elif J2 == "Feuille":
+      if J1 == "Pierre":
+        print("Vous avez perdu")
+        defaites += 1
+      elif J1 == "Ciseau":
+        print("Vous avez gagné")
+        victoires += 1
+      else :
+        print("Il y a égalité")
+        egalites += 1
+
+    choix = input("Voulez vous continuer (1), voir les scores (2), ou quitter (3)\n>")
+    if choix == "1" :
+        continuer = True
+    elif choix == "2" :
+      print(f'''Votre nombre de victoires est de : {victoires}
+Votre nombre d'égalitées est de : {egalites}
+Votre nombre de défaites est de : {defaites}''')
+    else :
+      continuer = False     
+
+  else :
+    print("Veuillez choisir entre Pierre, feuille ou ciseau")
